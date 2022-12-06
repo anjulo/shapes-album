@@ -96,16 +96,10 @@ public class GUIView implements IView {
       snapshotComboBox.addItem(snapshot.getId());
     }
 
-    snapshotComboBox.setSelectedItem(snapshots.get(currentSnapshotIndex).getId());
     snapshotComboBox.addActionListener(e -> {
-      String newSnapshotId = (String) snapshotComboBox.getSelectedItem();
-      for (int i = 0; i < snapshots.size(); i++) {
-        if (snapshots.get(i).getId().equals(newSnapshotId)) {
-          currentSnapshotIndex = i;
-          frame.repaint();
-          break;
-        }
-      }
+      currentSnapshotIndex = snapshotComboBox.getSelectedIndex();
+      frame.repaint();
+
     });
 
     JButton prevButton = new JButton("Previous");
