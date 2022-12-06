@@ -9,7 +9,6 @@ import java.util.Map;
 
 public class Snapshot implements ISnapshot {
 
-
   private final String id;
   private final String description;
   private final Map<String, IShape> image;
@@ -25,17 +24,13 @@ public class Snapshot implements ISnapshot {
       IShape shape = entry.getValue();
       if (shape instanceof Rectangle r) {
         Coordinates coords = new Coordinates(r.getCoordinates().x(), r.getCoordinates().y());
-        Dimensions dims = new Dimensions(r.getDimensions().x(),
-            r.getDimensions().y());
-        Color color = new Color(r.getColor().red(), r.getColor().green(),
-            r.getColor().blue());
+        Dimensions dims = new Dimensions(r.getDimensions().x(), r.getDimensions().y());
+        Color color = new Color(r.getColor().red(), r.getColor().green(),  r.getColor().blue());
         this.image.put(name, new Rectangle(name, coords, dims, color));
       } else if (shape instanceof Oval o) {
         Coordinates coords = new Coordinates(o.getCoordinates().x(), o.getCoordinates().y());
-        Dimensions dims = new Dimensions(o.getDimensions().x(),
-            o.getDimensions().y());
-        Color color = new Color(o.getColor().red(), o.getColor().green(),
-            o.getColor().blue());
+        Dimensions dims = new Dimensions(o.getDimensions().x(), o.getDimensions().y());
+        Color color = new Color(o.getColor().red(), o.getColor().green(), o.getColor().blue());
         this.image.put(name, new Oval(name, coords, dims, color));
       }
     }
