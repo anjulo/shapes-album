@@ -31,7 +31,7 @@ public class GUIView implements IView {
 
     // Create the frame
     frame = new JFrame();
-    frame.setTitle("Snapshot Viewer");
+    frame.setTitle("Snapshots");
     frame.setPreferredSize(new Dimension(width, height));
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   }
@@ -105,22 +105,39 @@ public class GUIView implements IView {
     JButton prevButton = new JButton("Previous");
     prevButton.addActionListener(e -> {
       if (currentSnapshotIndex > 0) {
-        currentSnapshotIndex--;
-        snapshotComboBox.setSelectedItem(snapshots.get(currentSnapshotIndex).getId());
+        snapshotComboBox.setSelectedItem(snapshots.get(--currentSnapshotIndex).getId());
         frame.repaint();
       } else {
-        JOptionPane.showMessageDialog(frame, "This is the first snapshot");
+        JOptionPane.showMessageDialog(frame, "No more previous snapshots");
+      }
+    });
+    // Key bindings for prevButton
+    frame.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(
+            KeyStroke.getKeyStroke("LEFT"), "prev");
+    frame.getRootPane().getActionMap().put("prev", new AbstractAction() {
+      @Override
+      public void actionPerformed(java.awt.event.ActionEvent e) {
+        prevButton.doClick();
       }
     });
 
     JButton nextButton = new JButton("Next");
     nextButton.addActionListener(e -> {
       if (currentSnapshotIndex < snapshots.size() - 1) {
-        currentSnapshotIndex++;
-        snapshotComboBox.setSelectedItem(snapshots.get(currentSnapshotIndex).getId());
+        snapshotComboBox.setSelectedItem(snapshots.get(++currentSnapshotIndex).getId());
         frame.repaint();
       } else {
-        JOptionPane.showMessageDialog(frame, "This is the last snapshot");
+        JOptionPane.showMessageDialog(frame, "No more next snapshots");
+      }
+    });
+
+    // Key bindings for nextButton
+    frame.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(
+            KeyStroke.getKeyStroke("RIGHT"), "next");
+    frame.getRootPane().getActionMap().put("next", new AbstractAction() {
+      @Override
+      public void actionPerformed(java.awt.event.ActionEvent e) {
+        nextButton.doClick();
       }
     });
 
