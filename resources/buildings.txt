@@ -1,0 +1,48 @@
+# canvas 0 0 800 800
+# snapshot 1
+shape sky rectangle 0 0 800 800 0 0 51
+shape sun oval 100 400 100 100 0 0 51
+shape B0 rectangle 80 424 100 326 0 0 0
+shape B1 rectangle 260 365 100 385 0 0 0
+shape B2 rectangle 440 375 100 375 0 0 0
+shape B3 rectangle 620 445 100 305 0 0 0
+snapshot It's a quiet night in the city...
+
+# snapshot 2
+color sun 0 0 100
+shape window000 rectangle 100 500 20 20 255 255 255
+shape window001 rectangle 140 500 20 20 255 255 255
+shape window010 rectangle 100 600 20 20 255 255 255
+shape window011 rectangle 140 600 20 20 255 255 255
+snapshot Early birds are up...
+
+# snapshot 3
+color sun 255 204 0
+move sun 150 350
+color sky 51 102 153
+snapshot The sun is rising...
+
+# snapshot 4
+shape window002 rectangle 280 500 20 20 255 255 255
+shape window021 rectangle 320 500 20 20 255 255 255
+shape window022 rectangle 280 600 20 20 255 255 255
+shape window200 rectangle 320 600 20 20 255 255 255
+
+shape window003 rectangle 460 500 20 20 255 255 255
+shape window033 rectangle 500 500 20 20 255 255 255
+shape window333 rectangle 460 600 20 20 255 255 255
+shape window313 rectangle 500 600 20 20 255 255 255
+snapshot More lights are on...
+
+# snapshot 5
+color sun 255 255 102
+move sun 350 220
+color sky 135 206 235
+snapshot The sun has risen...
+
+# snapshot 6
+shape window004 rectangle 640 500 20 20 255 255 255
+shape window044 rectangle 680 500 20 20 255 255 255
+shape window444 rectangle 640 600 20 20 255 255 255
+shape window414 rectangle 680 600 20 20 255 255 255
+snapshot The night owls are waking up...
