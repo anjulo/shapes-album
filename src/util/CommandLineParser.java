@@ -53,12 +53,12 @@ public class CommandLineParser {
       System.out.println("Output file is required for web view");
       System.exit(1);
     }
-    if (width < 0) {
-      System.out.println("Width must be a positive integer");
+    if(viewType.equals("graphical") && (width == -1 || height == -1)) {
+      System.out.println("Width and height are required for graphical view");
       System.exit(1);
     }
-    if (height < 0) {
-      System.out.println("Height must be a positive integer");
+    if(viewType.equals("graphical") && (width < 0 || height < 0)) {
+      System.out.println("Width and height must be positive integers");
       System.exit(1);
     }
 

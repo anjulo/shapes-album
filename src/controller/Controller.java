@@ -12,7 +12,6 @@ import view.*;
 public class Controller implements IController {
 
   private final String inputFile;
-
   private final IModel model;
   private final IView view;
 
@@ -27,7 +26,7 @@ public class Controller implements IController {
 
     view = switch (options.viewType()) {
       case "graphical", "g" -> new GUIView(options.width(), options.height());
-//      case "web", "w -> new WebView(options.outputFile());
+      case "web", "w" -> new WebView(options.outputFile());
       default -> throw new IllegalArgumentException("Invalid view type");
     };
   }
