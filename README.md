@@ -2,6 +2,9 @@
 
 This documentation outlines the structure and components of a shape drawing application implemented in Java. The application is designed around the Model-View-Controller (MVC) architecture and consists of several key interfaces and classes.
 
+## Preview
+<img src="assets/preview.gif" alt="Preview" width="500" height="500">
+
 ## PhotoAlbumMain
 
 `PhotoAlbumMain` is the main class of the application and serves as its entry point. It parses command-line arguments to configure and run the application. It validates command-line arguments and prints error messages for missing or invalid inputs.
