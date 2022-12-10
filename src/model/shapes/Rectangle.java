@@ -38,8 +38,7 @@ public class Rectangle extends AbstractShape {
    */
   @Override
   public String toString() {
-    return "Type: " + getType() + "\n"
-      + "Min corner: " + getCoordinates() + ", Width: " + getDimensions().x()
-      + ", Height: " + getDimensions().y() + ", " + getColor() + "\n";
+    return String.format("Type: %s\nMin corner: %s, Width: %.1f, Height: %.1f, %s\n",
+        getType(), getCoordinates(), getDimensions().x(), getDimensions().y(), getColor());
   }
 }

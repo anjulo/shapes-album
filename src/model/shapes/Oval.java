@@ -38,8 +38,11 @@ public class Oval extends AbstractShape {
    */
   @Override
   public String toString() {
-    return "Type: " + getType() + "\n"
-      + "Center: " + getCoordinates() + ", X radius: " + getDimensions().x()
-      + ", Y radius: " + getDimensions().y() + ", " + getColor() + "\n";
+//    return "Type: " + getType() + "\n"
+//      + "Center: " + getCoordinates() + ", X radius: " + getDimensions().x()
+//      + ", Y radius: " + getDimensions().y() + ", " + getColor() + "\n";
+    // replace with string.format
+    return String.format("Type: %s\nCenter: %s, X radius: %.1f, Y radius: %.1f, %s\n",
+        getType(), getCoordinates(), getDimensions().x(), getDimensions().y(), getColor());
   }
 }
